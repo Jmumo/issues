@@ -1,12 +1,8 @@
-const repoList = (state = {
-    repolist:{}}, action )=>{
-
-      
-        if(action.type === "FETCH_REPOS"){
-            state = {...state,repolist:action.payload }
-            return state;   
-        }
-        return state; 
+export default function repositoriesReducer(state = {
+    repositories: []
+}, action) {
+    if (action.type === "FETCH_REPOS") {
+        return {...state, repositories: action.payload};
     }
-
-export default repoList;
+    return state;
+};
